@@ -1,0 +1,24 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    background-color: whitesmoke;
+}
+#app{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#student_form{
+    background-color: rgb(187, 128, 243);
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 5%;
+    padding: 5px 0 15px 0px;
+}
+.red{
+    color: red;
+}
+.blue{
+    color: blue;
+}

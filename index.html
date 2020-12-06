@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ДЗ_11</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+
+
+
+<div id="app">
+    <h1>Учёт посещаемости студентов</h1>
+    <p>Для отметки присутствия студента введите его фамилию и имя в данную форму и нажмите на кнопку</p>
+    <form id="student_form">
+        <p><input name="fn" placeholder="Фамилия" :class="class_css" @input = "current_fn = $event.target.value"></p>
+        <p><input name="sn" placeholder="Имя" @input = "current_fn = $event.target.value"></p>
+        <button class="button orange" @click="add_student">Внести студента в список</button>
+    </form>
+    <h2>Список присутсвующих студентов:</h2>
+</div>
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
