@@ -8,7 +8,7 @@
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,17 +17,21 @@
 
 
 
+    <main>
+        <div id="app">
+            <h1>Учёт посещаемости студентов</h1>
+            <p :class="class_css">Для отметки присутствия студента введите его фамилию и имя в данную форму и нажмите на кнопку</p>
+            <form id="student_form">
+                <p><input name="fn" placeholder="Фамилия" v-model="current_sn"></p>
+                <p><input name="sn" placeholder="Имя" v-model="current_fn"></p>
+                <button type="button" class="button orange" @click="add_student">Внести студента в список</button>
+            </form>
+            <h2>Список присутствующих студентов:</h2>
+            <p v-if = "student_list.length == 0">Список пуст</p>
+            <students_component :list = "student_list"></students_component>
+        </div>
+    </main>
 
-<div id="app">
-    <h1>Учёт посещаемости студентов</h1>
-    <p>Для отметки присутствия студента введите его фамилию и имя в данную форму и нажмите на кнопку</p>
-    <form id="student_form">
-        <p><input name="fn" placeholder="Фамилия" :class="class_css" @input = "current_fn = $event.target.value"></p>
-        <p><input name="sn" placeholder="Имя" @input = "current_fn = $event.target.value"></p>
-        <button class="button orange" @click="add_student">Внести студента в список</button>
-    </form>
-    <h2>Список присутсвующих студентов:</h2>
-</div>
 
 
 

@@ -1,29 +1,25 @@
-Vue.component ('student-list', {
-    
-}
-)
-
+Vue.component ('students_component', {
+    props: ['list'],
+    template: '<ul><li v-for = "student in list">{{ student }}</li></ul>'
+});
 new Vue({
     el: '#app',
     data: {
-        class_css: "blue",
-        current_fn,
-        current_sn,
+        class_css: "black",
+        current_fn: '',
+        current_sn: '',
         student_list: []
     },
     methods: {
-        add_student: function(value1, value2) {
-            if(!value1 || !value2){
-                alert('Вы не заполнили имя или фамилию!')
-            }
-            else{
-                student_list.push(full_name)
+        add_student: function() {
+            if(this.current_fn != '' && this.current_sn != ''){
+                this.student_list.push(this.full_name)
             }
         }
     },
     computed: {
         full_name () {
-            return current_fn.toString() + " " + current_sn.toString();
+            return this.current_fn+ ' ' + this.current_sn
         }
     }
 });
